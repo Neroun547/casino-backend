@@ -20,7 +20,7 @@ public class SignUpRequest {
     String email;
 
     @NotBlank
-    @Length(min = 3, max = 50)
+    @Length(min = 6, max = 50)
     String password;
 
     @NotBlank
