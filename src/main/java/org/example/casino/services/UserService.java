@@ -13,7 +13,7 @@ public class UserService {
     UserRepository userRepository;
 
     public void createUser(SignUpRequest signUpRequest) throws BadRequestException {
-        var userInDbObject = userRepository.findByUsernameAndEmail(signUpRequest.getUsername(), signUpRequest.getEmail());
+        var userInDbObject = userRepository.findByUsernameOrEmail(signUpRequest.getUsername(), signUpRequest.getEmail());
 
         if(userInDbObject != null) {
             User userInDb = (User) userInDbObject;
